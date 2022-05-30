@@ -1,0 +1,21 @@
+---
+import { site, date as dateConfig } from '../config/gumori'
+const { frontmatter, Content } = Astro.props
+const date = frontmatter.published ?? frontmatter.created ?? false
+---
+
+<article class="h-entry">
+    <div class="mb-8">
+        <a class="hidden h-card" href={site.url}>{site.author}</a>
+        <a class="hidden u-url u-uid" href={site.url + frontmatter.path}>{frontmatter.path}</a>
+        <time itemprop="datePublished" class="dt-published" datetime={new Date(date).toISOString()}>{new Date(date).toLocaleString(dateConfig.locales, dateConfig.options)}</time>
+        <h1 itemprop="name headline" class="!mt-0 !mb-4 p-name">{frontmatter.title}</h1>
+        <>
+        {frontmatter.summary && <p class="p-summary">{frontmatter.summary}</p>}
+        {frontmatter.photo && <img class="w-full u-featured" loading="lazy" src={frontmatter.photo} alt={frontmatter.alt ?? frontmatter.photo} />}
+        </>
+    </div>
+    <div class="e-content">
+        <Content />
+    </div>
+</article>

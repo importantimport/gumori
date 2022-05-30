@@ -1,0 +1,83 @@
+---
+import { site, style, page as pageConfig } from '../config/gumori'
+import Head from '../components/head.astro'
+import Header from '../components/header.astro'
+import Post from '../components/post.astro'
+import PostPreview from '../components/post_preview.astro'
+import Pagination from '../components/pagination.astro'
+import Footer from '../components/footer.astro'
+
+export const getStaticPaths = async ({ paginate }) => {
+    const posts = await Astro.glob('../posts/**/*.md')
+    const pages = paginate(posts
+        .filter(post => !post.frontmatter.flags?.includes('unlisted'))
+        .sort((a, b) => Date.parse(b.frontmatter.published ?? b.frontmatter.created) - Date.parse(a.frontmatter.published ?? a.frontmatter.created)),
+        { pageSize: pageConfig.pageSize ?? 5 })
+    return [
+        ...pages.map(({ params, props }) => ({
+            params,
+            props: {
+                page: {
+                    ...props.page,
+                    data: props.page.data.map(post => ({
+                        ...post,
+                        frontmatter: {
+                            ...post.frontmatter,
+                            slug: post.file.replace(/.+?\/posts(.+)/, '$1'),
+                            path: post.file.replace(/.+?\/posts(.+)(index\.md|\.md)/, '$1').slice(1)
+                        }
+                    }))
+                }
+            }
+        })),
+        ...posts.map(post => ({
+            params: { page: post.file.replace(/(?:.*?\/posts)(.+?)(?:\/index\.md|\.md)/, '$1').slice(1) },
+            props: {
+                post: {
+                    ...post,
+                    frontmatter: {
+                        ...post.frontmatter,
+                        slug: post.file.replace(/.+?\/posts(.+)/, '$1'),
+                        path: post.file.replace(/.+?\/posts(.+)(index\.md|\.md)/, '$1').slice(1)
+                    }
+                }
+            }
+       }))
+    ]
+}
+
+const { page, post } = Astro.props;
+
+import.meta.env.DEV && console.log(page ?? post);
+---
+
+<html lang={site.lang ?? 'en' }>
+
+<head prefix="og: https://ogp.me/ns#">
+    <Head {page} {post} />
+</head>
+
+<body class="dark:bg-zinc-900" itemscope itemtype="https://schema.org/WebPage">
+    <main class={`${style.font==='serif' ? 'font-serif' : 'font-sans' } prose prose-zinc
+    dark:prose-white m-auto px-4 md:px-0 ${page ? 'h-feed' : 'h-entry' }`} itemprop="mainEntityOfPage" itemscope
+        itemtype={page ? 'https://schema.org/Blog' : 'https://schema.org/BlogPosting' }>
+        <Header {page} {post} />
+        {post ?
+        <Post {...post} />
+        : (
+        <>
+            {page.data.map((post: unknown, index: number) => (
+            <PostPreview {...post} />
+            <>
+              {index + 1 < page.data.length && <hr />}
+            </>
+            ))}
+            {(page.url.prev || page.url.next) &&
+            <Pagination url={page.url} />}
+        </>
+        )}
+        <Footer />
+    </main>
+</body>
+
+</html>

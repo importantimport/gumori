@@ -1,0 +1,36 @@
+@media (prefers-color-scheme: dark) {
+  :is(div, pre, code)[data-theme='light'] {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
+  :is(div, pre, code)[data-theme='dark'] {
+    display: none;
+  }
+}
+
+pre {
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+pre > code {
+  display: grid;
+}
+
+code[data-line-numbers] {
+  counter-reset: line;
+}
+
+code[data-line-numbers] > .line::before {
+  counter-increment: line;
+  content: counter(line);
+
+  /* Other styling */
+  display: inline-block;
+  width: 1rem;
+  margin-right: 2rem;
+  text-align: right;
+  color: gray;
+}

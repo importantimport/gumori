@@ -1,0 +1,10 @@
+---
+import { page } from '../config/gumori';
+const { url } = Astro.props
+---
+
+<nav class="flex my-8">
+    <hr />
+    {url.next && <h3 class={`!my-0 ${page.paginationDir === 'ltr' ? '!mr-auto' : '!ml-auto'}`}><a href={url.next} rel="next" class="hover:!underline">{page.paginationDir === 'ltr' ? `← Older` : `Older →`}</a></h3>}
+    {url.prev && <h3 class={`!my-0 ${page.paginationDir === 'ltr' ? '!ml-auto' : '!mr-auto'}`}><a href={url.prev} rel="prev" class="hover:!underline">{page.paginationDir === 'ltr' ? `Newer →` : `← Newer`}</a></h3>}
+</nav>

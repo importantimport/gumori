@@ -1,0 +1,15 @@
+@import './code.css';
+
+.prose :is(h1, h2, h3, h4, h5, h6) {
+  scroll-margin-top: 4rem;
+}
+
+.prose :is(h1, h2, h3, h4, h5, h6) > a {
+  text-decoration: none !important;
+  font-weight: bold !important;
+}
+
+.prose hr {
+  border-top-width: 1px !important;
+  border-top-style: solid !important;
+}
