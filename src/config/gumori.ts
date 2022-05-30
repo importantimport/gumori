@@ -22,10 +22,10 @@ export const nav: NavConfig = [
     text: 'Elements',
     link: '/elements'
   },
-  {
-    text: 'RSS',
-    link: '/rss.xml'
-  },
+  // {
+  //   text: 'RSS',
+  //   link: '/rss.xml'
+  // },
   import.meta.env.PROD && {
     text: 'Sitemap',
     link: 'sitemap.xml'
