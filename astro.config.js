@@ -11,8 +11,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 
 // https://astro.build/config
 export default defineConfig({
-  // site: "http://localhost:3000",
-  site: 'https://example.com',
+  site: 'https://gumori.netlify.app',
   integrations: [sitemap()],
   markdown: {
     syntaxHighlight: false,
