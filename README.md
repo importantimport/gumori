@@ -2,6 +2,8 @@
 
 > Lightweight, Fast, IndieWeb-Compatible Astro Blog Starter.
 
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/importantimport/gumori)
+
 ```bash
 npx degit importantimport/gumori my-blog && cd my-blog # create a new project in my-blog
 pnpm i # if u don't have pnpm installed, run: npm i -g pnpm
