@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@unocss/reset": "^0.36.0",
-    "astro": "^1.0.0-beta.36",
+    "astro": "^1.0.0-beta.38",
     "prettier": "^2.6.2",
     "prettier-plugin-astro": "^0.0.12",
     "rehype-autolink-headings": "^6.1.1",
