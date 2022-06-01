@@ -1,11 +1,13 @@
 ---
-import { date as dateConfig } from '../config/gumori'
+import { site, date as dateConfig } from '../config/gumori'
 const { frontmatter, Content } = Astro.props
 const date = frontmatter.published ?? frontmatter.created ?? false
 ---
 
 <article itemscope itemtype="https://schema.org/BlogPosting" itemprop="blogPost" class="h-entry">
     <div class="mb-8">
+        <a class="hidden h-card" href={site.url}>{site.author}</a>
+        <a class="hidden u-url u-uid" href={site.url + frontmatter.path}>{frontmatter.path}</a>
         <time itemprop="datePublished" class="dt-published" datetime={new Date(date).toISOString()}>{new Date(date).toLocaleString(dateConfig.locales, dateConfig.options)}</time>
         <h2 itemprop="name headline" class="!text-4xl !mt-0 !mb-4">
             <a itemprop="url" class="hover:!underline cursor-pointer u-url p-name"
