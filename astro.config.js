@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config'
 import sitemap from '@astrojs/sitemap'
+import compress from 'astro-compress'
 
 import UnoCSS from 'unocss/vite'
 import { presetUno, presetTypography } from 'unocss'
@@ -12,7 +13,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://gumori.netlify.app',
-  integrations: [sitemap()],
+  integrations: [sitemap(), compress()],
   markdown: {
     syntaxHighlight: false,
     remarkPlugins: [remarkGfm],

@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@astrojs/rss": "^0.2.0",
-    "@astrojs/sitemap": "^0.1.0"
+    "@astrojs/sitemap": "^0.1.0",
+    "astro-compress": "^0.0.8"
   }
 }
