@@ -1,6 +1,7 @@
 # build output
 dist/
 .netlify/
+src/styles/uno.css
 
 # dependencies
 node_modules/

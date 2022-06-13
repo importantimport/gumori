@@ -3,7 +3,6 @@ import sitemap from '@astrojs/sitemap'
 import compress from 'astro-compress'
 
 import UnoCSS from 'unocss/vite'
-import { presetUno, presetTypography } from 'unocss'
 
 import remarkGfm from 'remark-gfm'
 import rehypePrettyCode from 'rehype-pretty-code'
@@ -41,9 +40,7 @@ export default defineConfig({
   },
   vite: {
     plugins: [
-      UnoCSS({
-        presets: [presetUno(), presetTypography()]
-      })
+      UnoCSS()
     ]
   }
 })
