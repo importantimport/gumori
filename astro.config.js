@@ -2,8 +2,6 @@ import { defineConfig } from 'astro/config'
 import sitemap from '@astrojs/sitemap'
 import compress from 'astro-compress'
 
-import UnoCSS from 'unocss/vite'
-
 import remarkGfm from 'remark-gfm'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
@@ -36,11 +34,6 @@ export default defineConfig({
       ],
       rehypeSlug,
       [rehypeAutolinkHeadings, { behavior: 'wrap' }]
-    ]
-  },
-  vite: {
-    plugins: [
-      UnoCSS()
     ]
   }
 })
