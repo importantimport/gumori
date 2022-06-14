@@ -9,6 +9,11 @@ npx degit importantimport/gumori my-blog && cd my-blog # create a new project in
 pnpm i # if u don't have pnpm installed, run: npm i -g pnpm
 ```
 
+## 📝 TODO
+
+- [ ] PWA
+- [ ] JSON Feed (Broken)
+
 ## 🧱 Project Structure
 
 U'll see the following folders and files:
