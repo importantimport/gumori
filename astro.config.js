@@ -2,6 +2,8 @@ import { defineConfig } from 'astro/config'
 import sitemap from '@astrojs/sitemap'
 import compress from 'astro-compress'
 
+import { VitePWA } from 'vite-plugin-pwa'
+
 import remarkGfm from 'remark-gfm'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
@@ -34,6 +36,11 @@ export default defineConfig({
       ],
       rehypeSlug,
       [rehypeAutolinkHeadings, { behavior: 'wrap' }]
+    ]
+  },
+  vite: {
+    plugins: [
+      VitePWA()
     ]
   }
 })

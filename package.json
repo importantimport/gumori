@@ -29,7 +29,8 @@
     "rehype-slug": "^5.0.1",
     "remark-gfm": "^3.0.1",
     "shiki": "^0.10.1",
-    "unocss": "^0.37.4"
+    "unocss": "^0.37.4",
+    "vite-plugin-pwa": "0.11.11"
   },
   "dependencies": {
     "@astrojs/rss": "^0.2.0",
