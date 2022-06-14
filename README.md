@@ -11,7 +11,7 @@ pnpm i # if u don't have pnpm installed, run: npm i -g pnpm
 
 ## 📝 TODO
 
-- [ ] PWA (Broken)
+- [x] PWA (Old Version)
 - [ ] JSON Feed (Broken)
 - [ ] More Modern Design (MMD)
 - [ ] `bTM=`
