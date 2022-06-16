@@ -42,11 +42,3 @@ const permalink = site.url + (page ? page.url.current : post.frontmatter.path)
 
 <!-- PWA -->
 <script src="/src/scripts/pwa.ts"></script>
-
-<!-- Dark Mode -->
-<script is:inline>
-	(() => {
-		if (window.matchMedia?.('(prefers-color-scheme: dark)').matches) document.documentElement.classList.add('dark')
-		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => document.documentElement.classList.toggle('dark', event.matches ? true : false))
-	})()
-</script>
