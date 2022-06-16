@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config'
 import sitemap from '@astrojs/sitemap'
 import compress from 'astro-compress'
-import critters from "astro-critters"
+import critters from 'astro-critters'
 
 import { VitePWA } from 'vite-plugin-pwa'
 
@@ -13,11 +13,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://gumori.netlify.app',
-  integrations: [
-    sitemap(),
-    compress(),
-    critters()
-  ],
+  integrations: [sitemap(), compress(), critters()],
   markdown: {
     syntaxHighlight: false,
     remarkPlugins: [remarkGfm],
@@ -44,8 +40,6 @@ export default defineConfig({
     ]
   },
   vite: {
-    plugins: [
-      VitePWA()
-    ]
+    plugins: [VitePWA()]
   }
 })
