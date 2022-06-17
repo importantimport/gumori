@@ -14,7 +14,7 @@
     "build": "pnpm build:unocss && pnpm build:astro",
     "build:astro": "astro build --experimental-integrations",
     "build:unocss": "unocss \"src/**/*.astro\" -o ./src/styles/uno.css",
-    "preview": "astro preview",
+    "preview": "astro preview --experimental-integrations",
     "lint": "prettier .",
     "format": "prettier -w ."
   },
