@@ -6,7 +6,7 @@
 
 ```bash
 npx degit importantimport/gumori my-blog && cd my-blog # create a new project in my-blog
-pnpm i # if u don't have pnpm installed, run: npm i -g pnpm
+pnpm i # if you don't have pnpm installed, run: npm i -g pnpm
 ```
 
 ## 🎨 Minimal stylesheets
@@ -17,7 +17,7 @@ If you don't want to write your own styles, you can use the [Classless CSS libra
 
 ## 🧱 Project Structure
 
-U'll see the following folders and files:
+You'll see the following folders and files:
 
 ```bash
 /
@@ -42,8 +42,8 @@ Any static assets, like images, can be placed in the `public/` directory.
 | :------------- | :------------------------------------------ |
 | `pnpm i`       | Installs dependencies                       |
 | `pnpm dev`     | Starts local dev server at `localhost:3000` |
-| `pnpm build`   | Build ur production site to `./dist/`       |
-| `pnpm preview` | Preview ur build locally, before deploying  |
+| `pnpm build`   | Build your production site to `./dist/`       |
+| `pnpm preview` | Preview your build locally, before deploying  |
 
 ## 📝 License
 
