@@ -1,4 +1,4 @@
-# 📓 Gumori [WIP]
+# 📓 Gumori [β]
 
 > Lightweight, Fast, IndieWeb-Compatible Astro Blog Starter.
 
