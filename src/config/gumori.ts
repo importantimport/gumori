@@ -32,9 +32,9 @@ export const nav: NavConfig = [
     text: 'RSS',
     link: '/rss.xml'
   },
-  import.meta.env.PROD && {
+  {
     text: 'Sitemap',
-    link: 'sitemap.xml'
+    link: import.meta.env.SITE + 'sitemap.xml'
   }
 ]
 

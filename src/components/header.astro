@@ -14,7 +14,7 @@ const { page, post } = Astro.props
     {nav.map(({ text, link }, index: number) => text && (
     <a href={link}>{text}</a>
       <>
-        {index + 1 < nav.length - 1 && (<span>&nbsp;&nbsp;</span>)}
+        {index + 1 < nav.length && (<span>&nbsp;&nbsp;</span>)}
       </>
       ))}
     </p>
