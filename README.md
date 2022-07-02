@@ -45,6 +45,12 @@ Any static assets, like images, can be placed in the `public/` directory.
 | `pnpm build`   | Build your production site to `./dist/`       |
 | `pnpm preview` | Preview your build locally, before deploying  |
 
+## 🍴 Variations
+
+The variations of Gumori are listed here, it/they have different characteristics. PR to add yours is also welcome!
+
+- [Gumori You](https://github.com/importantimport/gumori-you) - 🖼️ Bringing Material Design 3 to the Astro Blog.
+
 ## 📝 License
 
 This work is free, it comes without any warranty. You can redistribute it and/or modify it under the
