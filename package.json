@@ -8,20 +8,14 @@
   "bugs": "https://github.com/importantimport/gumori/issues",
   "author": "藍+85CD",
   "scripts": {
-    "dev": "npm-run-all -p -r dev:unocss \"dev:astro {@} \" --",
-    "dev:astro": "astro dev --experimental-integrations",
-    "dev:unocss": "unocss \"src/**/*.astro\" -o ./src/styles/uno.css -w",
-    "build": "pnpm build:unocss && pnpm build:astro",
-    "build:astro": "astro build --experimental-integrations",
-    "build:unocss": "unocss \"src/**/*.astro\" -o ./src/styles/uno.css",
+    "dev": "astro dev --experimental-integrations",
+    "build": "astro build --experimental-integrations",
     "preview": "astro preview --experimental-integrations",
     "lint": "prettier .",
     "format": "prettier -w ."
   },
   "devDependencies": {
-    "@unocss/reset": "^0.39.0",
     "astro": "^1.0.0-beta.40",
-    "npm-run-all": "^4.1.5",
     "prettier": "^2.6.2",
     "prettier-plugin-astro": "^0.0.12",
     "rehype-autolink-headings": "^6.1.1",
@@ -29,13 +23,10 @@
     "rehype-slug": "^5.0.1",
     "remark-gfm": "^3.0.1",
     "shiki": "^0.10.1",
-    "unocss": "^0.39.0",
     "vite-plugin-pwa": "0.11.11"
   },
   "dependencies": {
     "@astrojs/rss": "^0.2.0",
-    "@astrojs/sitemap": "^0.1.0",
-    "astro-compress": "^0.0.11",
-    "astro-critters": "^0.0.7"
+    "@astrojs/sitemap": "^0.1.0"
   }
 }

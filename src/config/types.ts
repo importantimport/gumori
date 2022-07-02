@@ -17,15 +17,12 @@ export type SiteConfig = {
   keywords?: string[]
   author?: string
   lang?: string
+  stylesheets?: string[]
 }
 
 export type PageConfig = {
   paginationDir?: 'ltr' | 'rtl'
   pageSize?: number
-}
-
-export type StyleConfig = {
-  font?: 'sans' | 'serif'
 }
 
 export type NavConfig =

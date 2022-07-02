@@ -42,7 +42,7 @@ export const getStaticPaths = async ({ paginate }) => {
                     }
                 }
             }
-       }))
+        }))
     ]
 }
 
@@ -54,13 +54,12 @@ import.meta.env.DEV && console.log(page ?? post);
 <html lang={site.lang ?? 'en' }>
 
 <head prefix="og: https://ogp.me/ns#">
+
     <Head {page} {post} />
 </head>
 
-<body class="dark:bg-zinc-900" itemscope itemtype="https://schema.org/WebPage">
-    <main class={`${style.font==='serif' ? 'font-serif' : 'font-sans' } prose prose-zinc
-    dark:prose-white m-auto px-4 md:px-0 ${page ? 'h-feed' : 'h-entry' }`} itemprop="mainEntityOfPage" itemscope
-        itemtype={page ? 'https://schema.org/Blog' : 'https://schema.org/BlogPosting' }>
+<body class={page ? 'h-feed' : '' } itemscope itemtype="https://schema.org/WebPage">
+    <main itemprop="mainEntityOfPage" itemscope itemtype={page ? 'https://schema.org/Blog' : '' }>
         <Header {page} {post} />
         {post ?
         <Post {...post} />
@@ -69,7 +68,8 @@ import.meta.env.DEV && console.log(page ?? post);
             {page.data.map((post: unknown, index: number) => (
             <PostPreview {...post} />
             <>
-              {index + 1 < page.data.length && <hr />}
+                {index + 1
+                < page.data.length && <hr />}
             </>
             ))}
             {(page.url.prev || page.url.next) &&

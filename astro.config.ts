@@ -1,7 +1,5 @@
 import { defineConfig } from 'astro/config'
 import sitemap from '@astrojs/sitemap'
-import compress from 'astro-compress'
-import critters from 'astro-critters'
 
 import { VitePWA } from 'vite-plugin-pwa'
 
@@ -13,30 +11,25 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://gumori.netlify.app',
-  integrations: [sitemap(), compress(), critters()],
+  integrations: [sitemap()],
   markdown: {
     syntaxHighlight: false,
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
+      [rehypePrettyCode, { theme: { light: 'github-light', dark: 'github-dark' } }],
+      rehypeSlug,
       [
-        rehypePrettyCode,
+        rehypeAutolinkHeadings,
         {
-          theme: { light: 'github-light', dark: 'github-dark' },
-          onVisitLine(node) {
-            if (node.children.length === 0) {
-              node.children = [{ type: 'text', value: ' ' }]
-            }
-          },
-          onVisitHighlightedLine(node) {
-            node.properties.className.push('line--highlighted')
-          },
-          onVisitHighlightedWord(node) {
-            node.properties.className = ['word']
+          behavior: 'append',
+          content: {
+            type: 'element',
+            tagName: 'span',
+            properties: { className: ['anchor-link'] },
+            children: [{ type: 'text', value: '#' }]
           }
         }
-      ],
-      rehypeSlug,
-      [rehypeAutolinkHeadings, { behavior: 'wrap' }]
+      ]
     ]
   },
   vite: {

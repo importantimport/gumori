@@ -3,15 +3,21 @@ import { site, nav } from '../config/gumori'
 const { page, post } = Astro.props
 ---
 
-<section class="flex flex-col text-center gap-2 mt-8">
-  <h1 class="!text-xl !m-0"><a href="/">{site.title}</a></h1>
-  {(page ?? !post) && <p class="opacity-75 !m-0">{site.description}</p>}
+<header>
+  { page
+    ? (<h1>{site.title}</h1>)
+    : (<h2><a href="/">{site.title}</a></h2>)
+  }
   {nav?.length && (
-    <nav class="flex max-w-full pb-4 mx-auto overflow-x-auto gap-2 md:justify-center md:flex-wrap">
-      {nav.map(({ text, link }) => (
-        <a href={link} class="!no-underline hover:!underline">{text}</a>
+  <nav>
+    <p>
+    {nav.map(({ text, link }, index: number) => text && (
+    <a href={link}>{text}</a>
+      <>
+        {index + 1 < nav.length - 1 && (<span>&nbsp;&nbsp;</span>)}
+      </>
       ))}
-    </nav>
+    </p>
+  </nav>
   )}
-  <hr class={nav?.length ? '!mt-4' : '' } />
-</section>
+</header>

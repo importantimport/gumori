@@ -5,21 +5,22 @@ const date = frontmatter.published ?? frontmatter.created ?? false
 ---
 
 <article itemscope itemtype="https://schema.org/BlogPosting" itemprop="blogPost" class="h-entry">
-    <div class="mb-8">
-        <a class="hidden h-card" href={site.url}>{site.author}</a>
-        <a class="hidden u-url u-uid" href={site.url + frontmatter.path}>{frontmatter.path}</a>
+    <a style="display: none" class="u-url u-uid" href={site.url + frontmatter.path}>{frontmatter.path}</a>
+    <h2 itemprop="name headline" class="!text-4xl !mt-0 !mb-4">
+        <a itemprop="url" class="hover:!underline cursor-pointer u-url p-name"
+            href={frontmatter.path}>{frontmatter.title}</a>
+    </h2>
+    <p>
+        Published by
+        <a class="p-author h-card" href={import.meta.env.SITE}>{site.author}</a>
+        on
         <time itemprop="datePublished" class="dt-published" datetime={new Date(date).toISOString()}>{new Date(date).toLocaleString(dateConfig.locales, dateConfig.options)}</time>
-        <h2 itemprop="name headline" class="!text-4xl !mt-0 !mb-4">
-            <a itemprop="url" class="hover:!underline cursor-pointer u-url p-name"
-                href={frontmatter.path}>{frontmatter.title}</a>
-        </h2>
-        <>
+    </p>
+    <>
         {frontmatter.summary && <p class="p-summary">{frontmatter.summary}</p>}
         {frontmatter.photo && <img class="w-full u-featured" loading="lazy" src={frontmatter.photo} alt={frontmatter.alt ?? frontmatter.photo} />}
-        </>
-    </div>
-    <div class="e-content">
+    </>
+    <div class="prose e-content">
         <Content />
     </div>
 </article>
-<!-- <hr /> -->

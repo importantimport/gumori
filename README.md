@@ -9,12 +9,11 @@ npx degit importantimport/gumori my-blog && cd my-blog # create a new project in
 pnpm i # if u don't have pnpm installed, run: npm i -g pnpm
 ```
 
-## 📝 TODO
+## 🎨 Minimal stylesheets
 
-- [x] PWA (Old Version)
-- [ ] JSON Feed (Broken)
-- [ ] More Modern Design (MMD)
-- [ ] `bTM=`
+Gumori only includes styles to go with [rehype-pretty-code](https://github.com/atomiks/rehype-pretty-code), which means you can use it as the basis for designing your own blog.
+
+If you don't want to write your own styles, you can use the [Classless CSS library](https://github.com/dbohdan/classless-css#classless) - for example, Gumori currently import [new.css](https://github.com/xz/new.css) by default.
 
 ## 🧱 Project Structure
 

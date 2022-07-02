@@ -1,8 +1,7 @@
 ---
-import '@unocss/reset/tailwind.css'
-import '../styles/prose.css'
-import '../styles/uno.css'
-
+// gumori core stylesheets
+import '../styles/gumori.css'
+// gumori site config
 import { site } from '../config/gumori'
 
 const { page, post } = Astro.props
@@ -42,3 +41,6 @@ const permalink = site.url + (page ? page.url.current : post.frontmatter.path)
 
 <!-- PWA -->
 <script src="/src/scripts/pwa.ts"></script>
+
+<!-- Stylesheets -->
+{site.stylesheets?.map(href => (<link rel="stylesheet" {href} />))}
