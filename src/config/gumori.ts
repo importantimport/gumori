@@ -34,7 +34,7 @@ export const nav: NavConfig = [
   },
   {
     text: 'Sitemap',
-    link: import.meta.env.SITE + 'sitemap.xml'
+    link: import.meta.env.SITE + 'sitemap-0.xml'
   }
 ]
 
