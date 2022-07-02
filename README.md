@@ -13,7 +13,7 @@ pnpm i # if you don't have pnpm installed, run: npm i -g pnpm
 
 Gumori only includes styles to go with [rehype-pretty-code](https://github.com/atomiks/rehype-pretty-code), which means you can use it as the basis for designing your own blog.
 
-If you don't want to write your own styles, you can use the [Classless CSS library](https://github.com/dbohdan/classless-css#classless) - for example, Gumori currently import [new.css](https://github.com/xz/new.css) by default.
+If you don't want to write your own styles, you can use the [classless CSS library](https://github.com/dbohdan/classless-css#classless) - for example, Gumori currently import [new.css](https://github.com/xz/new.css) by default.
 
 ## 🧱 Project Structure
 
@@ -47,7 +47,7 @@ Any static assets, like images, can be placed in the `public/` directory.
 
 ## 🍴 Variations
 
-The variations of Gumori are listed here, it/they have different characteristics. PR to add yours is also welcome!
+The variations of Gumori are listed here, it/they have different features. PR to add yours is also welcome!
 
 - [Gumori You](https://github.com/importantimport/gumori-you) - 🖼️ Bringing Material Design 3 to the Astro Blog.
 
