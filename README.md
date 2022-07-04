@@ -1,6 +1,6 @@
 # 📓 Gumori [β]
 
-> Lightweight, Fast, IndieWeb-Compatible Astro Blog Starter.
+> Minimal Stylesheets & IndieWeb-Compatible Astro Blog Starter.
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/importantimport/gumori)
 
