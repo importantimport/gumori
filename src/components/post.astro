@@ -15,7 +15,7 @@ const date = frontmatter.published ?? frontmatter.created ?? false
     </p>
     <>
         {frontmatter.summary && <p class="p-summary">{frontmatter.summary}</p>}
-        {frontmatter.photo && <img class="u-featured" loading="lazy" src={frontmatter.photo} alt={frontmatter.alt ?? frontmatter.photo} />}
+        {frontmatter.photo && <img class={frontmatter.title ? 'u-featured' : 'u-photo'} loading="lazy" src={frontmatter.photo} alt={frontmatter.alt ?? frontmatter.photo} />}
     </>
     <div class="prose e-content">
         <Content />
