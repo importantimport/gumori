@@ -18,6 +18,12 @@ export type SiteConfig = {
   author?: string
   lang?: string
   stylesheets?: string[]
+  scripts?: {
+    src: string
+    type: string
+    async: boolean
+    defer: boolean
+  }[]
 }
 
 export type PageConfig = {

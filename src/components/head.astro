@@ -44,3 +44,8 @@ const permalink = site.url + (page ? page.url.current : post.frontmatter.path)
 
 <!-- Stylesheets -->
 {site.stylesheets?.map(href => (<link rel="stylesheet" {href} />))}
+
+<!-- Scripts -->
+{site.scripts?.map(({src, type, async, defer}) => (
+	<script {src} {type} {async} {defer}></script>
+))}
