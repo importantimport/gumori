@@ -9,6 +9,12 @@ npx degit importantimport/gumori my-blog && cd my-blog # create a new project in
 pnpm i # if you don't have pnpm installed, run: npm i -g pnpm
 ```
 
+## 📝 TODO
+
+- [ ] JSON Feed ([withastro/rfcs#190](https://github.com/withastro/rfcs/discussions/190))
+- [ ] Multiple Authors
+- [ ] Types of Posts
+
 ## 🎨 Minimal stylesheets
 
 Gumori only includes styles to go with [rehype-pretty-code](https://github.com/atomiks/rehype-pretty-code), which means you can use it as the basis for designing your own blog.
