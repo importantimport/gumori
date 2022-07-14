@@ -13,6 +13,7 @@ pnpm i # if you don't have pnpm installed, run: npm i -g pnpm
 
 - [ ] JSON Feed ([withastro/rfcs#190](https://github.com/withastro/rfcs/discussions/190))
 - [ ] [Types of Posts](https://indieweb.org/posts#Types_of_Posts)
+- [ ] Tags
 - [x] Multiple Authors
 
 ## 🎨 Minimal stylesheets
@@ -30,11 +31,10 @@ You'll see the following folders and files:
 ├── public/
 │   └── favicon.png
 ├── src/
-│   ├── config/
-│   │   ├── gumori.ts
-│   │   └── types.ts
-│   └── posts/
-│       └── elements.md # example.com/elements
+│   ├── posts/
+│   │   └── elements.md # example.com/elements
+│   ├── global.d.ts
+│   └── gumori.ts # config
 └── package.json
 ```
 
