@@ -34,7 +34,6 @@ export default defineConfig({
     ]
   },
   vite: {
-    ssr: { external: ['github-slugger' ]},
     plugins: [VitePWA()]
   }
 })

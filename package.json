@@ -16,7 +16,7 @@
     "format": "prettier -w ."
   },
   "devDependencies": {
-    "astro": "^1.0.0-beta.69",
+    "astro": "^1.0.0-beta.70",
     "prettier": "^2.6.2",
     "prettier-plugin-astro": "^0.1.1",
     "rehype-autolink-headings": "^6.1.1",
