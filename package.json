@@ -8,14 +8,15 @@
   "bugs": "https://github.com/importantimport/gumori/issues",
   "author": "藍+85CD",
   "scripts": {
-    "dev": "astro dev --experimental-integrations",
-    "build": "astro build --experimental-integrations",
-    "preview": "astro preview --experimental-integrations",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
     "lint": "prettier .",
     "format": "prettier -w ."
   },
   "devDependencies": {
-    "astro": "^1.0.0-beta.40",
+    "astro": "^1.0.0-beta.69",
     "prettier": "^2.6.2",
     "prettier-plugin-astro": "^0.1.1",
     "rehype-autolink-headings": "^6.1.1",
@@ -27,6 +28,6 @@
   },
   "dependencies": {
     "@astrojs/rss": "^0.2.0",
-    "@astrojs/sitemap": "^0.2.4"
+    "@astrojs/sitemap": "^0.2.6"
   }
 }

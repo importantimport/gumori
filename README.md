@@ -12,8 +12,8 @@ pnpm i # if you don't have pnpm installed, run: npm i -g pnpm
 ## 📝 TODO
 
 - [ ] JSON Feed ([withastro/rfcs#190](https://github.com/withastro/rfcs/discussions/190))
-- [ ] Multiple Authors
-- [ ] Types of Posts
+- [ ] [Types of Posts](https://indieweb.org/posts#Types_of_Posts)
+- [x] Multiple Authors
 
 ## 🎨 Minimal stylesheets
 

@@ -1,10 +1,16 @@
 ---
 // gumori core stylesheets
-import '../styles/gumori.css'
+import '@src/styles/gumori.css'
 // gumori site config
-import { site } from '../config/gumori'
+import { site } from '@src/gumori'
 
-const { page, post } = Astro.props
+export interface Props {
+	page: Page
+	post: Post
+}
+
+const { page, post } = Astro.props as Props
+
 const title = page
 	? page.url.current === '/'
 		? site.title
@@ -43,9 +49,10 @@ const permalink = site.url + (page ? page.url.current : post.frontmatter.path)
 <script src="/src/scripts/pwa.ts"></script>
 
 <!-- Stylesheets -->
-{site.stylesheets?.map(href => (<link rel="stylesheet" {href} />))}
+{site.stylesheets?.map(href => (
+<link rel="stylesheet" {href} />))}
 
 <!-- Scripts -->
 {site.scripts?.map(({src, type, async, defer}) => (
-	<script {src} {type} {async} {defer}></script>
+<script {src} {type} {async} {defer}></script>
 ))}

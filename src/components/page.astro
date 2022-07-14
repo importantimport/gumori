@@ -1,0 +1,17 @@
+---
+import Post from '@components/post.astro'
+import Pagination from '@components/pagination.astro'
+
+export interface Props {
+    page: Page
+}
+
+const { page } = Astro.props as Props
+const { url } = page
+---
+
+{page.data.map(post => (
+<Post post={post} preview={true} />
+))}
+{(url.prev || url.next) &&
+<Pagination url={url} />}

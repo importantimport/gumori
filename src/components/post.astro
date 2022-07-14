@@ -1,21 +1,37 @@
 ---
-import { site, date as dateConfig } from '../config/gumori'
-const { frontmatter, Content } = Astro.props
-const date = frontmatter.published ?? frontmatter.created ?? false
+import { site } from '@src/gumori'
+import Author from '@components/post/author.astro'
+import Date from '@components/post/date.astro'
+
+export interface Props {
+    post: Post
+    preview?: boolean
+}
+
+const { post, preview } = Astro.props as Props
+const { frontmatter, Content } = post
+const date = frontmatter.published ?? frontmatter.created ?? ''
 ---
 
 <article itemscope itemtype="https://schema.org/BlogPosting" itemprop="blogPost" class="h-entry">
     <a style="display: none" class="u-url u-uid" href={site.url + frontmatter.path}>{frontmatter.path}</a>
-    <h1 itemprop="name headline" class="p-name">{frontmatter.title}</h1>
+    {preview
+    ? <h2 itemprop="name headline" class="!text-4xl !mt-0 !mb-4">
+        <a itemprop="url" class="hover:!underline cursor-pointer u-url p-name"
+            href={frontmatter.path}>{frontmatter.title}</a>
+    </h2>
+    : <h1 itemprop="name headline" class="p-name">{frontmatter.title}</h1>
+    }
     <p>
         Published by
-        <a class="p-author h-card" href={import.meta.env.SITE}>{site.author}</a>
+        <Author authors={frontmatter.authors} />
         on
-        <time itemprop="datePublished" class="dt-published" datetime={new Date(date).toISOString()}>{new Date(date).toLocaleString(dateConfig.locales, dateConfig.options)}</time>
+        <Date date={date} />
     </p>
     <>
         {frontmatter.summary && <p class="p-summary">{frontmatter.summary}</p>}
-        {frontmatter.photo && <img class={frontmatter.title ? 'u-featured' : 'u-photo'} loading="lazy" src={frontmatter.photo} alt={frontmatter.alt ?? frontmatter.photo} />}
+        {frontmatter.photo && <img class={frontmatter.title ? 'u-featured' : 'u-photo' } loading="lazy"
+            src={frontmatter.photo} alt={frontmatter.alt ?? frontmatter.photo} />}
     </>
     <div class="prose e-content">
         <Content />

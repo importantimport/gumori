@@ -1,5 +1,5 @@
 import rss from '@astrojs/rss'
-import { site, rss as rssConfig } from '../config/gumori'
+import { site, rss as rssConfig } from '@src/gumori'
 
 export const get = () =>
   rss({

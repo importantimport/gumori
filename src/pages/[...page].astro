@@ -1,11 +1,15 @@
 ---
-import { site, page as pageConfig } from '../config/gumori'
-import Head from '../components/head.astro'
-import Header from '../components/header.astro'
-import Post from '../components/post.astro'
-import PostPreview from '../components/post_preview.astro'
-import Pagination from '../components/pagination.astro'
-import Footer from '../components/footer.astro'
+import { site, page as pageConfig } from '@src/gumori'
+import Head from '@components/head.astro'
+import Header from '@components/header.astro'
+import Page from '@components/page.astro'
+import Post from '@components/post.astro'
+import Footer from '@components/footer.astro'
+
+export interface Props {
+    page: Page
+    post: Post
+}
 
 export const getStaticPaths = async ({ paginate }) => {
     const posts = await Astro.glob('../posts/**/*.md')
@@ -46,9 +50,9 @@ export const getStaticPaths = async ({ paginate }) => {
     ]
 }
 
-const { page, post } = Astro.props;
+const { page, post } = Astro.props as Props
 
-import.meta.env.DEV && console.log(page ?? post);
+import.meta.env.DEV && console.log(page ?? post)
 ---
 
 <html lang={site.lang ?? 'en' }>
@@ -62,20 +66,9 @@ import.meta.env.DEV && console.log(page ?? post);
     <main itemprop="mainEntityOfPage" itemscope itemtype={page ? 'https://schema.org/Blog' : '' }>
         <Header {page} {post} />
         {post ?
-        <Post {...post} />
-        : (
-        <>
-            {page.data.map((post: unknown, index: number) => (
-            <PostPreview {...post} />
-            <>
-                {index + 1
-                < page.data.length && <hr />}
-            </>
-            ))}
-            {(page.url.prev || page.url.next) &&
-            <Pagination url={page.url} />}
-        </>
-        )}
+        <Post post={post} />
+        :
+        <Page page={page} />}
         <Footer />
     </main>
 </body>

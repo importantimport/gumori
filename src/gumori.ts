@@ -1,11 +1,20 @@
-import type { SiteConfig, PageConfig, NavConfig, RSSConfig, DateConfig } from './types'
-
-export const site: SiteConfig = {
+export const site: Config.Site = {
   url: import.meta.env.SITE,
   title: 'Gumori',
   description: 'Lightweight, Fast, IndieWeb-Compatible Astro Blog Starter.',
   keywords: ['Gumori', 'Astro', 'UnoCSS'],
-  author: 'John Doe',
+  authors: {
+    default: {
+      name: 'John Doe',
+      url: import.meta.env.SITE,
+      default: true
+    // },
+    // default2: {
+    //   name: 'Jane Doe',
+    //   url: import.meta.env.SITE,
+    //   default: true
+    }
+  },
   lang: 'en',
   stylesheets: [
     'https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css' // new.css
@@ -19,11 +28,11 @@ export const site: SiteConfig = {
   ]
 }
 
-export const page: PageConfig = {
+export const page: Config.Page = {
   pageSize: 5
 }
 
-export const nav: NavConfig = [
+export const nav: Config.Nav = [
   {
     text: 'Elements',
     link: '/elements'
@@ -38,9 +47,9 @@ export const nav: NavConfig = [
   }
 ]
 
-export const rss: RSSConfig = {}
+export const rss: Config.RSS = {}
 
-export const date: DateConfig = {
+export const date: Config.Date = {
   locales: 'en-US',
   options: {
     year: 'numeric',

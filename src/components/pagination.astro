@@ -1,10 +1,14 @@
 ---
-import { page } from '../config/gumori'
-const { url } = Astro.props
+
+export interface Props {
+    url: Page['url']
+}
+
+const { url } = Astro.props as Props
 ---
 
 <nav>
     <hr />
-    {url.next && <h3><a href={url.next} rel="next" class="hover:!underline">{page.paginationDir === 'ltr' ? `← Older` : `Older →`}</a></h3>}
-    {url.prev && <h3><a href={url.prev} rel="prev" class="hover:!underline">{page.paginationDir === 'ltr' ? `Newer →` : `← Newer`}</a></h3>}
+    {url.next && <h3><a href={url.next} rel="next">Older</a></h3>}
+    {url.prev && <h3><a href={url.prev} rel="prev">Newer</a></h3>}
 </nav>
