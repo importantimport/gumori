@@ -8,11 +8,11 @@ export const site: Config.Site = {
       name: 'John Doe',
       url: import.meta.env.SITE,
       default: true
-    // },
-    // default2: {
-    //   name: 'Jane Doe',
-    //   url: import.meta.env.SITE,
-    //   default: true
+      // },
+      // default2: {
+      //   name: 'Jane Doe',
+      //   url: import.meta.env.SITE,
+      //   default: true
     }
   },
   lang: 'en',
