@@ -1,11 +1,7 @@
 ---
 import { date as dateConfig } from '@src/gumori'
 
-export interface Props {
-    date: string
-}
-
-const { date } = Astro.props as Props
+const { date } = Astro.props as { date: string }
 ---
 
 <time itemprop="datePublished" class="dt-published" datetime={new Date(date).toISOString()}>

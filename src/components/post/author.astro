@@ -1,11 +1,7 @@
 ---
 import { site } from '@src/gumori'
 
-export interface Props {
-    authors: FrontMatter['authors']
-}
-
-const { authors } = Astro.props
+const { authors } = Astro.props as { authors: FrontMatter['authors'] }
 ---
 
 {(authors

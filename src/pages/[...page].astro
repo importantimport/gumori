@@ -6,11 +6,6 @@ import Page from '@components/page.astro'
 import Post from '@components/post.astro'
 import Footer from '@components/footer.astro'
 
-export interface Props {
-    page: Page
-    post: Post
-}
-
 export const getStaticPaths = async ({ paginate }) => {
     const posts = await Astro.glob('../posts/**/*.md')
     const pages = paginate(posts
@@ -50,7 +45,10 @@ export const getStaticPaths = async ({ paginate }) => {
     ]
 }
 
-const { page, post } = Astro.props as Props
+const { page, post } = Astro.props as {
+    page: Page
+    post: Post
+}
 
 import.meta.env.DEV && console.log(page ?? post)
 ---

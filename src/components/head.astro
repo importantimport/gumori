@@ -4,12 +4,10 @@ import '@src/styles/gumori.css'
 // gumori site config
 import { site } from '@src/gumori'
 
-export interface Props {
+const { page, post } = Astro.props as {
 	page: Page
 	post: Post
 }
-
-const { page, post } = Astro.props as Props
 
 const title = page
 	? page.url.current === '/'

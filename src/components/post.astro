@@ -3,12 +3,10 @@ import { site } from '@src/gumori'
 import Author from '@components/post/author.astro'
 import Date from '@components/post/date.astro'
 
-export interface Props {
+const { post, preview } = Astro.props as {
     post: Post
     preview?: boolean
 }
-
-const { post, preview } = Astro.props as Props
 const { frontmatter, Content } = post
 const date = frontmatter.published ?? frontmatter.created ?? ''
 ---

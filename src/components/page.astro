@@ -2,11 +2,7 @@
 import Post from '@components/post.astro'
 import Pagination from '@components/pagination.astro'
 
-export interface Props {
-    page: Page
-}
-
-const { page } = Astro.props as Props
+const { page } = Astro.props as { page: Page }
 const { url } = page
 ---
 

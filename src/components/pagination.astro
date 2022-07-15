@@ -1,10 +1,5 @@
 ---
-
-export interface Props {
-    url: Page['url']
-}
-
-const { url } = Astro.props as Props
+const { url } = Astro.props as { url: Page['url'] }
 ---
 
 <nav>

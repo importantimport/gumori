@@ -1,12 +1,10 @@
 ---
 import { site, nav } from '@src/gumori'
 
-export interface Props {
-  page?: Page
-  post?: Post
+const { page, post } = Astro.props as {
+  page: Page
+  post: Post
 }
-
-const { page, post } = Astro.props as Props
 ---
 
 <header>
