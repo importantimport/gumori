@@ -13,7 +13,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "lint": "prettier .",
-    "format": "prettier -w ."
+    "format": "prettier -w --plugin-search-dir=. ."
   },
   "devDependencies": {
     "@types/node": "^18.0.5",
