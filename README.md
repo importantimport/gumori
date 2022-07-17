@@ -28,12 +28,9 @@ You'll see the following folders and files:
 
 ```bash
 /
-├── public/
-│   └── favicon.png
+├── gumori/
+│   └── elements.md # example.com/elements
 ├── src/
-│   ├── posts/
-│   │   └── elements.md # example.com/elements
-│   ├── global.d.ts
 │   └── gumori.ts # config
 └── package.json
 ```

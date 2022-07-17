@@ -1,5 +1,6 @@
 ---
 import { site, page as pageConfig } from '@src/gumori'
+import { resolve } from 'path'
 import Head from '@components/head.astro'
 import Header from '@components/header.astro'
 import Page from '@components/page.astro'
@@ -7,47 +8,64 @@ import Post from '@components/post.astro'
 import Footer from '@components/footer.astro'
 
 export const getStaticPaths = async ({ paginate }) => {
-    const posts = await Astro.glob('../posts/**/*.md')
-    const pages = paginate(posts
-        .filter(post => !post.frontmatter.flags?.includes('unlisted'))
-        .sort((a, b) => Date.parse(b.frontmatter.published ?? b.frontmatter.created) - Date.parse(a.frontmatter.published ?? a.frontmatter.created)),
-        { pageSize: pageConfig.pageSize ?? 5 })
-    return [
-        ...pages.map(({ params, props }) => ({
-            params,
-            props: {
-                page: {
-                    ...props.page,
-                    data: props.page.data.map(post => ({
-                        ...post,
-                        frontmatter: {
-                            ...post.frontmatter,
-                            slug: post.file.replace(/.+?\/posts(.+)/, '$1'),
-                            path: post.file.replace(/.+?\/posts(.+)(index\.md|\.md)/, '$1').slice(1)
-                        }
-                    }))
-                }
+  const posts = await Astro.glob('../../gumori/**/*.md')
+  const pages = paginate(
+    posts
+      .filter(post => !post.frontmatter.flags?.includes('unlisted'))
+      .sort(
+        (a, b) =>
+          Date.parse(b.frontmatter.published ?? b.frontmatter.created) -
+          Date.parse(a.frontmatter.published ?? a.frontmatter.created)
+      ),
+    { pageSize: pageConfig.pageSize ?? 5 }
+  )
+
+  // posts.forEach(post => console.log(post.file))
+
+  return [
+    ...pages.map(({ params, props }) => ({
+      params,
+      props: {
+        page: {
+          ...props.page,
+          data: props.page.data.map(post => ({
+            ...post,
+            frontmatter: {
+              ...post.frontmatter,
+              slug: post.file.replace(resolve('gumori'), ''),
+              path: post.file
+                .replace(resolve('gumori'), '')
+                .replace(/(.+?)(?:\/index\.md|\.md)/, '$1')
+                .slice(1)
             }
-        })),
-        ...posts.map(post => ({
-            params: { page: post.file.replace(/(?:.*?\/posts)(.+?)(?:\/index\.md|\.md)/, '$1').slice(1) },
-            props: {
-                post: {
-                    ...post,
-                    frontmatter: {
-                        ...post.frontmatter,
-                        slug: post.file.replace(/.+?\/posts(.+)/, '$1'),
-                        path: post.file.replace(/.+?\/posts(.+)(index\.md|\.md)/, '$1').slice(1)
-                    }
-                }
-            }
-        }))
-    ]
+          }))
+        }
+      }
+    })),
+    ...posts.map(post => ({
+      params: {
+        page: post.file
+          .replace(resolve('gumori'), '')
+          .replace(/(.+?)(?:\/index\.md|\.md)/, '$1')
+          .slice(1)
+      },
+      props: {
+        post: {
+          ...post,
+          frontmatter: {
+            ...post.frontmatter,
+            slug: post.file.replace(/.+?\/posts(.+)/, '$1'),
+            path: post.file.replace(/.+?\/posts(.+)(index\.md|\.md)/, '$1').slice(1)
+          }
+        }
+      }
+    }))
+  ]
 }
 
 const { page, post } = Astro.props as {
-    page: Page
-    post: Post
+  page: Page
+  post: Post
 }
 
 import.meta.env.DEV && console.log(page ?? post)
