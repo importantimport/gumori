@@ -23,11 +23,11 @@ const cleanMarkdown = async (src: string) =>
 
 /**
  * Vite Plugin Gumori
- * @remarks force vite.publicDir to be 'gumori' and automatically purge useless Markdown files at the end of the build.
+ * @remarks force vite.publicDir to be 'gumori' and automatically purge useless Markdown files at the close of the bundle.
  * @returns Vite Plugin Object
  */
 export const Gumori = (): Plugin => ({
   name: 'vite-plugin-gumori',
   config: () => ({ publicDir: 'gumori' }),
-  buildEnd: async () => await cleanMarkdown(resolve(astroConfig.vite?.build?.outDir ?? 'dist'))
+  closeBundle: async () => await cleanMarkdown(resolve(astroConfig.vite?.build?.outDir ?? 'dist'))
 })
