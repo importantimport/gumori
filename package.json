@@ -17,18 +17,18 @@
   },
   "devDependencies": {
     "@types/node": "^18.0.5",
-    "astro": "^1.0.0-beta.70",
-    "prettier": "^2.6.2",
+    "astro": "^1.0.0-beta.72",
+    "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.1.1",
     "rehype-autolink-headings": "^6.1.1",
-    "rehype-pretty-code": "^0.3.1",
+    "rehype-pretty-code": "^0.3.2",
     "rehype-slug": "^5.0.1",
     "remark-gfm": "^3.0.1",
     "shiki": "^0.10.1",
     "vite-plugin-pwa": "0.11.11"
   },
   "dependencies": {
-    "@astrojs/rss": "^0.2.0",
+    "@astrojs/rss": "^0.2.1",
     "@astrojs/sitemap": "^0.2.6"
   }
 }
