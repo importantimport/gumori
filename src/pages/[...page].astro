@@ -53,22 +53,16 @@ const { page, post } = Astro.props as {
 import.meta.env.DEV && console.log(page ?? post)
 ---
 
-<html lang={site.lang ?? 'en' }>
-
-<head prefix="og: https://ogp.me/ns#">
-
+<html lang={site.lang ?? 'en'}>
+  <head prefix='og: https://ogp.me/ns#'>
     <Head {page} {post} />
-</head>
+  </head>
 
-<body class={page ? 'h-feed' : '' } itemscope itemtype="https://schema.org/WebPage">
-    <main itemprop="mainEntityOfPage" itemscope itemtype={page ? 'https://schema.org/Blog' : '' }>
-        <Header {page} {post} />
-        {post ?
-        <Post post={post} />
-        :
-        <Page page={page} />}
-        <Footer />
+  <body class={page ? 'h-feed' : ''} itemscope itemtype='https://schema.org/WebPage'>
+    <main itemprop='mainEntityOfPage' itemscope itemtype={page ? 'https://schema.org/Blog' : ''}>
+      <Header {page} {post} />
+      {post ? <Post post={post} /> : <Page page={page} />}
+      <Footer />
     </main>
-</body>
-
+  </body>
 </html>

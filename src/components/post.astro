@@ -4,34 +4,44 @@ import Author from '@components/post/author.astro'
 import Date from '@components/post/date.astro'
 
 const { post, preview } = Astro.props as {
-    post: Post
-    preview?: boolean
+  post: Post
+  preview?: boolean
 }
 const { frontmatter, Content } = post
 const date = frontmatter.published ?? frontmatter.created ?? ''
 ---
 
-<article itemscope itemtype="https://schema.org/BlogPosting" itemprop="blogPost" class="h-entry">
-    <a style="display: none" class="u-url u-uid" href={site.url + frontmatter.path}>{frontmatter.path}</a>
-    {preview
-    ? <h2 itemprop="name headline" class="!text-4xl !mt-0 !mb-4">
-        <a itemprop="url" class="hover:!underline cursor-pointer u-url p-name"
-            href={frontmatter.path}>{frontmatter.title}</a>
+<article itemscope itemtype='https://schema.org/BlogPosting' itemprop='blogPost' class='h-entry'>
+  <a style='display: none' class='u-url u-uid' href={site.url + frontmatter.path}>{frontmatter.path}</a>
+  {preview ? (
+    <h2 itemprop="name headline" class="!text-4xl !mt-0 !mb-4">
+      <a itemprop="url" class="hover:!underline cursor-pointer u-url p-name" href={frontmatter.path}>
+        {frontmatter.title}
+      </a>
     </h2>
-    : <h1 itemprop="name headline" class="p-name">{frontmatter.title}</h1>
-    }
-    <p>
-        Published by
-        <Author authors={frontmatter.authors} />
-        on
-        <Date date={date} />
-    </p>
-    <>
-        {frontmatter.summary && <p class="p-summary">{frontmatter.summary}</p>}
-        {frontmatter.photo && <img class={frontmatter.title ? 'u-featured' : 'u-photo' } loading="lazy"
-            src={frontmatter.photo} alt={frontmatter.alt ?? frontmatter.photo} />}
-    </>
-    <div class="prose e-content">
-        <Content />
-    </div>
+  ) : (
+    <h1 itemprop="name headline" class="p-name">
+      {frontmatter.title}
+    </h1>
+  )}
+  <p>
+    Published by
+    <Author authors={frontmatter.authors} />
+    on
+    <Date date={date} />
+  </p>
+  <>
+    {frontmatter.summary && <p class="p-summary">{frontmatter.summary}</p>}
+    {frontmatter.photo && (
+      <img
+        class={frontmatter.title ? 'u-featured' : 'u-photo'}
+        loading="lazy"
+        src={frontmatter.photo}
+        alt={frontmatter.alt ?? frontmatter.photo}
+      />
+    )}
+  </>
+  <div class='prose e-content'>
+    <Content />
+  </div>
 </article>

@@ -6,8 +6,5 @@ const { page } = Astro.props as { page: Page }
 const { url } = page
 ---
 
-{page.data.map(post => (
-<Post post={post} preview={true} />
-))}
-{(url.prev || url.next) &&
-<Pagination url={url} />}
+{page.data.map(post => <Post post={post} preview={true} />)}
+{(url.prev || url.next) && <Pagination url={url} />}

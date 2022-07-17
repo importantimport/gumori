@@ -4,6 +4,6 @@ import { date as dateConfig } from '@src/gumori'
 const { date } = Astro.props as { date: string }
 ---
 
-<time itemprop="datePublished" class="dt-published" datetime={new Date(date).toISOString()}>
-    {new Date(date).toLocaleString(dateConfig.locales, dateConfig.options)}
+<time itemprop='datePublished' class='dt-published' datetime={new Date(date).toISOString()}>
+  {new Date(date).toLocaleString(dateConfig.locales, dateConfig.options)}
 </time>

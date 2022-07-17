@@ -3,7 +3,19 @@ const { url } = Astro.props as { url: Page['url'] }
 ---
 
 <nav>
-    <hr />
-    {url.next && <h3><a href={url.next} rel="next">Older</a></h3>}
-    {url.prev && <h3><a href={url.prev} rel="prev">Newer</a></h3>}
+  <hr />
+  {url.next && (
+    <h3>
+      <a href={url.next} rel="next">
+        Older
+      </a>
+    </h3>
+  )}
+  {url.prev && (
+    <h3>
+      <a href={url.prev} rel="prev">
+        Newer
+      </a>
+    </h3>
+  )}
 </nav>
