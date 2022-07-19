@@ -1,5 +1,9 @@
 # 📓 Gumori [β]
 
+[![fff](https://img.shields.io/badge/%F0%9F%8C%9F%20F%20F%20F-0.1.0-yellow?style=flat)](https://github.com/importantimport/fff)
+![language](https://img.shields.io/github/languages/top/importantimport/gumori?color=%23ff5a03)
+[![license](https://img.shields.io/github/license/importantimport/gumori?color=%23fff)](COPYING)
+
 > Minimal Stylesheets & IndieWeb-Compatible Astro Blog Starter.
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/importantimport/gumori)
