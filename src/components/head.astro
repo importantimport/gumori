@@ -38,8 +38,8 @@ const permalink = site.url + (page ? page.url.current : post.frontmatter.path)
 <meta property="og:description" content={description} />
 
 <!-- Photo -->
-{post?.frontmatter?.photo && (
-<meta property="og:image" content={post.frontmatter.photo} />
+{post?.frontmatter?.image && (
+<meta property="og:image" content={post.frontmatter.image} />
 <meta property="twitter:card" content="summary_large_image" />
 )}
 

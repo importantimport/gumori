@@ -1,31 +1,30 @@
-import { AstroComponentFactory } from 'astro/dist/types/runtime/server'
+import type { FFFBase, FFFAuthor } from 'fff-flavored-frontmatter'
+import type { AstroComponentFactory } from 'astro/dist/types/runtime/server'
 
 declare global {
-  type FrontMatter = {
-    path: string
+  type Frontmatter = Exclude<FFFBase, "image"> & {
+    /** 
+     * post path.
+     * @remarks auto-generated
+     */
+    path?: string
+    /** 
+     * specifies one or more post authors.
+     * @remarks authors defined in siteConfig can be obtained using string as key.
+     */
     authors?: (
       | string
-      | {
-          /** author name. */
-          name: string
-          /** author url. */
-          url?: string
-          /** author avatar, not currently in use. possible future use for JSON Feed. */
-          avatar?: string
-        }
+      | FFFAuthor
     )[]
-    title?: string
-    created?: string
-    published?: string
-    photo?: string
-    alt?: string
-    summary?: string
-    tags?: string[]
-    flags?: string[]
+    /**
+     * the featured image for article, or image for "photo" / "multi-photo" posts.
+     * @remarks currently only supports string
+     */
+    image?: string
   }
 
   type Post = {
-    frontmatter: FrontMatter
+    frontmatter: Frontmatter
     file: URL
     Content: AstroComponentFactory
   }

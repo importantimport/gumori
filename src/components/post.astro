@@ -32,12 +32,12 @@ const date = frontmatter.published ?? frontmatter.created ?? ''
   </p>
   <>
     {frontmatter.summary && <p class="p-summary">{frontmatter.summary}</p>}
-    {frontmatter.photo && (
+    {frontmatter.image && (
       <img
         class={frontmatter.title ? 'u-featured' : 'u-photo'}
         loading="lazy"
-        src={frontmatter.photo}
-        alt={frontmatter.alt ?? frontmatter.photo}
+        src={frontmatter.image}
+        alt={frontmatter.image}
       />
     )}
   </>

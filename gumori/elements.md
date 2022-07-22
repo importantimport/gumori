@@ -1,8 +1,7 @@
 ---
 title: Elements
 published: 2022-06-04
-photo: https://via.placeholder.com/768x384.webp?text=Gumori
-alt: via placeholder.com
+image: https://via.placeholder.com/768x384.webp?text=Gumori
 ---
 
 ## Contents

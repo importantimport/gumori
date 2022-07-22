@@ -58,5 +58,5 @@ export const date: Config.Date = {
   }
 }
 
-export const typeOfPost = (frontmatter: FrontMatter): string =>
-  frontmatter.title ? 'article' : frontmatter.photo ? 'photo' : 'note'
+export const typeOfPost = (frontmatter: Frontmatter): string =>
+  frontmatter.title ? 'article' : frontmatter.image ? 'photo' : 'note'

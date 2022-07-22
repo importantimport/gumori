@@ -5,6 +5,7 @@ specifiers:
   '@astrojs/sitemap': ^0.2.6
   '@types/node': ^18.0.5
   astro: ^1.0.0-beta.72
+  fff-flavored-frontmatter: ~0.2.0
   prettier: ^2.7.1
   prettier-plugin-astro: ^0.1.1
   rehype-autolink-headings: ^6.1.1
@@ -21,6 +22,7 @@ dependencies:
 devDependencies:
   '@types/node': 18.0.5
   astro: 1.0.0-beta.72
+  fff-flavored-frontmatter: 0.2.0
   prettier: 2.7.1
   prettier-plugin-astro: 0.1.1
   rehype-autolink-headings: 6.1.1
@@ -2535,6 +2537,10 @@ packages:
     dependencies:
       node-domexception: 1.0.0
       web-streams-polyfill: 3.2.1
+    dev: true
+
+  /fff-flavored-frontmatter/0.2.0:
+    resolution: {integrity: sha512-qoGeoN2yaOvbFKpvFWEZ4gHdzVJujf8lKQAjx050p7jD403k2t0HhCqD9BxHaP9/sRZXuWRh4Mp8pgv/fQYQ5g==}
     dev: true
 
   /filelist/1.0.4:
