@@ -1,5 +1,5 @@
 ---
-import { site } from '@src/gumori'
+import { site, page as pageConfig } from '@src/gumori'
 import Author from '@components/post/author.astro'
 import Date from '@components/post/date.astro'
 
@@ -40,8 +40,13 @@ const date = frontmatter.published ?? frontmatter.created ?? ''
         alt={frontmatter.image}
       />
     )}
+    {(!preview || pageConfig.preview?.content) && (
+      <div class='prose e-content'>
+        <Content />
+      </div>
+    )}
+    {preview && !pageConfig.preview?.content && pageConfig.preview?.link !== false && (
+      <a href={frontmatter.path}>Read more</a>
+    )}
   </>
-  <div class='prose e-content'>
-    <Content />
-  </div>
 </article>

@@ -75,6 +75,10 @@ declare global {
     type Page = {
       paginationDir?: 'ltr' | 'rtl'
       pageSize?: number
+      preview?: {
+        content?: boolean
+        link?: boolean
+      }
     }
 
     type Nav =
