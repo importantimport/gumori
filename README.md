@@ -39,9 +39,9 @@ You'll see the following folders and files:
 └── package.json
 ```
 
-Astro looks for `.md` files in the `src/posts/` directory. Each page is exposed as a route based on its file name.
+Astro looks for `.md` files in the `gumori` directory. Each page is exposed as a route based on its filename.
 
-Any static assets, like images, can be placed in the `public/` directory.
+Also you can put any static assets (like images) in the same location!
 
 ## 🖥️ Commands
 
