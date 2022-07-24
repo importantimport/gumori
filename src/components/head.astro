@@ -43,9 +43,6 @@ const permalink = site.url + (page ? page.url.current : post.frontmatter.path)
 <meta property="twitter:card" content="summary_large_image" />
 )}
 
-<!-- PWA -->
-<script src="/src/scripts/pwa.ts"></script>
-
 <!-- Stylesheets -->
 {site.stylesheets?.map(href => (
 <link rel="stylesheet" {href} />))}

@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config'
 import sitemap from '@astrojs/sitemap'
 
-import { VitePWA } from 'vite-plugin-pwa'
 import { Gumori } from './src/scripts/vite'
 
 import remarkGfm from 'remark-gfm'
@@ -36,7 +35,6 @@ export default defineConfig({
   },
   vite: {
     plugins: [
-      VitePWA(),
       Gumori()
     ]
   }
