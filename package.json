@@ -16,11 +16,11 @@
     "format": "prettier -w --plugin-search-dir=. ."
   },
   "devDependencies": {
-    "@types/node": "^18.0.5",
-    "astro": "^1.0.0-beta.72",
-    "fff-flavored-frontmatter": "~0.2.0",
+    "@types/node": "^18.0.6",
+    "astro": "^1.0.0-beta.73",
+    "fff-flavored-frontmatter": "~0.2.1",
     "prettier": "^2.7.1",
-    "prettier-plugin-astro": "^0.1.1",
+    "prettier-plugin-astro": "^0.1.2",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-pretty-code": "^0.3.2",
     "rehype-slug": "^5.0.1",
@@ -28,7 +28,7 @@
     "shiki": "^0.10.1"
   },
   "dependencies": {
-    "@astrojs/rss": "^0.2.1",
+    "@astrojs/rss": "^0.2.2",
     "@astrojs/sitemap": "^0.2.6"
   }
 }
