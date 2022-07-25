@@ -34,8 +34,7 @@ export default defineConfig({
     ]
   },
   vite: {
-    plugins: [
-      Gumori()
-    ]
+    optimizeDeps: { exclude: ['url'] },
+    plugins: [Gumori()]
   }
 })
