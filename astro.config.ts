@@ -12,7 +12,6 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 export default defineConfig({
   site: 'https://gumori.netlify.app',
   integrations: [sitemap()],
-  experimental: { integrations: true },
   markdown: {
     syntaxHighlight: false,
     remarkPlugins: [remarkGfm],
