@@ -16,11 +16,11 @@
     "format": "prettier -w --plugin-search-dir=. ."
   },
   "devDependencies": {
-    "@types/node": "^18.7.2",
-    "astro": "^1.0.3",
-    "fff-flavored-frontmatter": "~0.2.1",
+    "@types/node": "^18.7.14",
+    "astro": "^1.1.5",
+    "fff-flavored-frontmatter": "~0.3.0",
     "prettier": "^2.7.1",
-    "prettier-plugin-astro": "^0.5.0",
+    "prettier-plugin-astro": "^0.5.4",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-pretty-code": "^0.3.2",
     "rehype-slug": "^5.0.1",
