@@ -3,6 +3,8 @@
 import '@src/styles/gumori.css'
 // gumori site config
 import { site } from '@src/gumori'
+// pwa info
+import { pwaInfo } from 'virtual:pwa-info'
 
 const { page, post } = Astro.props as {
 	page: Page
@@ -36,6 +38,10 @@ const permalink = site.url + (page ? page.url.current : post.frontmatter.path)
 <meta property="og:url" content={permalink} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
+
+<!-- PWA -->
+<script src="/src/scripts/pwa.ts"></script>
+{ pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> }
 
 <!-- Photo -->
 {post?.frontmatter?.image && (

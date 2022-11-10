@@ -16,16 +16,18 @@
     "format": "prettier -w --plugin-search-dir=. ."
   },
   "devDependencies": {
-    "@types/node": "^18.11.3",
-    "astro": "^1.5.2",
+    "@types/node": "^18.11.9",
+    "@vite-pwa/astro": "^0.0.1",
+    "astro": "^1.6.5",
     "fff-flavored-frontmatter": "~0.3.0",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.6.0",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-pretty-code": "^0.3.2",
-    "rehype-slug": "^5.0.1",
+    "rehype-slug": "^5.1.0",
     "remark-gfm": "^3.0.1",
-    "shiki": "^0.10.1"
+    "shiki": "^0.10.1",
+    "vite-plugin-pwa": "^0.13.3"
   },
   "dependencies": {
     "@astrojs/rss": "^0.2.2",

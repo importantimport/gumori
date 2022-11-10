@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config'
 import sitemap from '@astrojs/sitemap'
+import AstroPWA from '@vite-pwa/astro'
 
 import { Gumori } from './src/scripts/vite'
 
@@ -11,7 +12,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://gumori.netlify.app',
-  integrations: [sitemap()],
+  integrations: [sitemap(), AstroPWA()],
   markdown: {
     syntaxHighlight: false,
     remarkPlugins: [remarkGfm],
