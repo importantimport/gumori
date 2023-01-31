@@ -1,6 +1,6 @@
 # 📓 Gumori [β]
 
-[![fff](https://img.shields.io/badge/%F0%9F%8C%9F%20F%20F%20F-0.3-yellow?style=flat)](https://fff.js.org)
+[![fff](https://img.shields.io/badge/%F0%9F%8C%9F%20F%20F%20F-0.5-yellow?style=flat)](https://fff.js.org)
 ![language](https://img.shields.io/github/languages/top/importantimport/gumori?color=%23ff5a03)
 [![license](https://img.shields.io/github/license/importantimport/gumori?color=%23fff)](COPYING)
 
