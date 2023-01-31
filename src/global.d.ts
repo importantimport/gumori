@@ -1,8 +1,8 @@
-import type { FFFBase, FFFAuthor } from 'fff-flavored-frontmatter'
-import type { AstroComponentFactory } from 'astro/dist/types/runtime/server'
+import type { FFFBase, FFFDateTime, FFFMedia, FFFAuthor } from 'fff-flavored-frontmatter'
+import type { MarkdownInstance } from 'astro'
 
 declare global {
-  type Frontmatter = Exclude<FFFBase, "image"> & {
+  type Frontmatter = FFFBase & Pick<FFFDateTime, 'created' | 'updated' | 'published'> & Pick<FFFMedia, 'image'> & {
     /** 
      * post path.
      * @remarks auto-generated
@@ -23,11 +23,7 @@ declare global {
     image?: string
   }
 
-  type Post = {
-    frontmatter: Frontmatter
-    file: URL
-    Content: AstroComponentFactory
-  }
+  type Post = MarkdownInstance<Frontmatter>
 
   type Page = {
     data: Post[]
