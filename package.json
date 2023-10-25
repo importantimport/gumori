@@ -30,7 +30,7 @@
     "vite-plugin-pwa": "^0.14.1"
   },
   "dependencies": {
-    "@astrojs/rss": "^3.00.0",
+    "@astrojs/rss": "^3.0.0",
     "@astrojs/sitemap": "^3.0.2"
   }
 }
